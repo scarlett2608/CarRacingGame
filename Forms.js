@@ -6,6 +6,7 @@ class Form {
         this.input = createInput('Name');
         this.button = createButton('Play');
         this.greeting = createElement('h3');
+        this.reset = createButton('Reset');
 
     }
 
@@ -13,6 +14,7 @@ class Form {
         this.input.hide();
         this.greeting.hide();
         this.button.hide();
+
 
     }
 
@@ -37,5 +39,14 @@ class Form {
             this.greeting.position(displayWidth/2 - 70,displayHeight/2);
         });
 
+
+        this.reset.position(displayWidth-200,100);
+        this.reset.mousePressed(()=>{
+
+            player.updateCount(0);
+            game.update(0);
+            Player.updateRank(0);
+            
+        });
     }
 }
